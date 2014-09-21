@@ -1,4 +1,4 @@
-package ar.edu.itba.pod.mmxivii.alumno;
+package ar.edu.itba.pod.mmxivii.florcha;
 
 import ar.edu.itba.pod.mmxivii.tweetwars.GameMaster;
 import ar.edu.itba.pod.mmxivii.tweetwars.GamePlayer;

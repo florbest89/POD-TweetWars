@@ -1,7 +1,5 @@
 package gameEssentialsImp;
 
-
-
 import gameEssentials.GameMaster;
 import gameEssentials.GamePlayer;
 import gameEssentials.Status;
@@ -148,11 +146,11 @@ public class GameMasterImpl implements GameMaster
 	{
 		try {
 			if (tweet.getSource().equals(playerData.getId())) throw new IllegalArgumentException("Cannot register your own tweets");
-			final GamePlayerData sourcePlayerData = getGamePlayerData(tweet.getSource());
+			final GamePlayerData sourcePlayerData = getGamePlayerData(tweet.getSource(),false);
 
 			final int[] r = tweetsProvider.registerTweet(tweet, sourcePlayerData.player, sourcePlayerData.hash);
 
-			sourcePlayerData.addAndGet(r[1]);
+			if (!sourcePlayerData.isBanned) sourcePlayerData.addAndGet(r[1]);
 			return playerData.addAndGet(r[0]);
 		} catch (IllegalArgumentException e) {
 			playerData.banned();

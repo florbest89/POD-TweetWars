@@ -13,7 +13,7 @@ public class Game {
 	private TweetsProvider tweetsProvider;
 	private GameMaster gameMaster;
 	private String clusterName;
-	private static int top = 100;
+	private final int top = 100;
 
 	public Game(TweetsProvider tweetsProvider, GameMaster gameMaster,
 			String clusterName) {
@@ -30,13 +30,9 @@ public class Game {
 		Player player = new Player(new GamePlayer("florcha",
 				"Ma. Florencia Besteiro. Legajo 51117"), "florcha-pod-51117",
 				top);
-		//Lo conecto al Game Master
-		Player player2 = new Player(new GamePlayer("muni","Muni Milo Aio RIni"),"gorditos",top);
 		newGame(player);
-		newGame(player2);
 		
-		int count = 50;
-		while (count != 0) {
+		while (true) {
 			
 			//Obtengo tweets nuevos
 			getNewTweets(player);
@@ -47,27 +43,9 @@ public class Game {
 			//Si junte 100 tweets para notificar, lo hago
 			notifyTweets(player);
 			
-			//PARA PRUEBA
-			//Obtengo tweets nuevos
-			getNewTweets(player2);
-			//Los divulgo entre todos los jugadores
-			publicize(player2);
-			//Si junte 100 tweets los chequeo
-			checkTweets(player2);
-			//Si junte 100 tweets para notificar, lo hago
-			notifyTweets(player2);
-			
-			count--;
-			
+					
 		}
 		
-		try {
-			System.out.println("Puntaje de " + player.getGamePlayer().getId() + ", es " + gameMaster.getScore(player.getGamePlayer()));
-			System.out.println("Puntaje de " + player2.getGamePlayer().getId() + ", es " + gameMaster.getScore(player2.getGamePlayer()));
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 
 	}
@@ -86,8 +64,7 @@ public class Game {
 		}
 		
 		try {
-			int count = gameMaster.tweetsReceived(player.getGamePlayer(), tweetsToNotify);
-			System.out.println("notifique " + count + " tweets");
+			gameMaster.tweetsReceived(player.getGamePlayer(), tweetsToNotify);
 		} catch (RemoteException e) {
 			System.out.println("No se pudieron reportar los tweets");
 			e.printStackTrace();

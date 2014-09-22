@@ -15,11 +15,11 @@
     </properties>
 
     <dependencies>
-        <dependency>
+       <!-- <dependency>
             <groupId>itba-pod-2014-2c</groupId>
             <artifactId>tweet-wars-server-florcha</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+            <version>1.0-SNAPSHOT</version> 
+        </dependency>-->
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>

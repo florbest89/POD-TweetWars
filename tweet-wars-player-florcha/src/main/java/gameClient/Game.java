@@ -1,17 +1,12 @@
-package ar.edu.itba.pod.mmxivii.florcha;
+package gameClient;
 
-//import gameEssentials.GamePlayer;
-//import gameEssentials.Status;
+import gameEssentials.GamePlayer;
+import gameEssentials.Status;
 import java.rmi.RemoteException;
 
 import player.Player;
-import ar.edu.itba.pod.mmxivii.tweetwars.GameMaster;
-import ar.edu.itba.pod.mmxivii.tweetwars.GamePlayer;
-import ar.edu.itba.pod.mmxivii.tweetwars.Status;
-//import gameEssentials.GameMaster;
-import ar.edu.itba.pod.mmxivii.tweetwars.TweetsProvider;
-
-//import gameEssentials.TweetsProvider;
+import gameEssentials.GameMaster;
+import gameEssentials.TweetsProvider;
 
 public class Game {
 
@@ -40,7 +35,7 @@ public class Game {
 		newGame(player);
 		newGame(player2);
 		
-		int count = 200;
+		int count = 50;
 		while (count != 0) {
 			
 			//Obtengo tweets nuevos

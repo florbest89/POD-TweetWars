@@ -33,7 +33,7 @@ public class GroupsNode {
 
 	public void send(Object message) {
 		
-		Message msg = new Message(channel.getAddress());
+		Message msg = new Message();
 		msg = msg.setObject(message);
 		
 		try {

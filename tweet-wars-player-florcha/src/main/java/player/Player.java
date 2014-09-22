@@ -1,6 +1,5 @@
 package player;
 
-//import gameEssentials.Status;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,10 +10,9 @@ import java.util.Set;
 import org.jgroups.Message;
 import org.jgroups.ReceiverAdapter;
 
-import ar.edu.itba.pod.mmxivii.tweetwars.GamePlayer;
-import ar.edu.itba.pod.mmxivii.tweetwars.Status;
 
-//import gameEssentials.GamePlayer;
+import gameEssentials.Status;
+import gameEssentials.GamePlayer;
 
 public class Player {
 
@@ -88,14 +86,12 @@ public class Player {
 
 	public long[] getTweetsToCheck() {
 
-		System.out.println("Mensajes recibidos " + receivedIndex);
 		
-		if (receivedIndex != top) {
+		if (receivedIndex < top) {
 			return null;
 		}
 
 		receivedIndex = 0;
-
 		return receivedTweets;
 
 	}
@@ -138,12 +134,11 @@ public class Player {
 
 			Object msgObj = msg.getObject();
 			
-			//if (msgObj instanceof Status) {
+			if (msgObj instanceof Status) {
 				Status tweet = (Status) msgObj;
-				System.out.println("Recibi un tweet");
 				receivedTweets[receivedIndex] = tweet.getId();
 				receivedIndex++;
-			//}
+			}
 
 		}
 

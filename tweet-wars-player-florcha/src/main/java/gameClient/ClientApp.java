@@ -1,7 +1,7 @@
-package ar.edu.itba.pod.mmxivii.florcha;
+package gameClient;
 
-import ar.edu.itba.pod.mmxivii.tweetwars.GameMaster;
-import ar.edu.itba.pod.mmxivii.tweetwars.TweetsProvider;
+import gameEssentials.GameMaster;
+import gameEssentials.TweetsProvider;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -10,14 +10,14 @@ import java.rmi.registry.Registry;
 
 
 
-public class App {
+public class ClientApp {
 	
 	public static final String TWEETS_PROVIDER_NAME = "tweetsProvider";
 	public static final String GAME_MASTER_NAME = "gameMaster";
 	public static String groupsClusterName;
 
 
-	private App() {
+	private ClientApp() {
 	}
 
 	public static void main(String[] args)

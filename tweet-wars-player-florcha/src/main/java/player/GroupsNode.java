@@ -1,7 +1,9 @@
-package groupsNode;
+package player;
 
+import org.jgroups.Address;
 import org.jgroups.JChannel;
 import org.jgroups.Message;
+import org.jgroups.ReceiverAdapter;
 
 public class GroupsNode {
 
@@ -30,15 +32,25 @@ public class GroupsNode {
 	}
 
 	public void send(Object message) {
-		Message groupMessage = new Message(channel.getAddress());
+		
+		Message msg = new Message(channel.getAddress());
+		msg = msg.setObject(message);
+		
 		try {
-			channel.send(groupMessage.setObject(message));
+			channel.send(msg);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			System.out.println("No se ha podido enviar el mensaje");
 			e.printStackTrace();
-			System.out.println("No se pudo enviar el mensaje");
-		}
+		};
 
+	}
+	
+	Address getAddress(){
+		return channel.getAddress();
+	}
+	
+	public void setReceiver(ReceiverAdapter receiver){
+		channel.setReceiver(receiver);
 	}
 
 }

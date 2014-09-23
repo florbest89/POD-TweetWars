@@ -2,9 +2,9 @@ package server;
 
 import org.apache.commons.cli.*;
 
-import gameEssentials.GameMaster;
-import gameEssentialsImp.GameMasterImpl;
-import gameEssentialsImp.TweetsProviderImpl;
+import ar.edu.itba.pod.mmxivii.tweetwars.GameMaster;
+import ar.edu.itba.pod.mmxivii.tweetwars.impl.GameMasterImpl;
+import ar.edu.itba.pod.mmxivii.tweetwars.impl.TweetsProviderImpl;
 
 import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;

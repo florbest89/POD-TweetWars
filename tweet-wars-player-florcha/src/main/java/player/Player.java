@@ -10,9 +10,10 @@ import java.util.Set;
 import org.jgroups.Message;
 import org.jgroups.ReceiverAdapter;
 
+import ar.edu.itba.pod.mmxivii.tweetwars.GamePlayer;
+import ar.edu.itba.pod.mmxivii.tweetwars.Status;
 
-import gameEssentials.Status;
-import gameEssentials.GamePlayer;
+
 
 public class Player {
 

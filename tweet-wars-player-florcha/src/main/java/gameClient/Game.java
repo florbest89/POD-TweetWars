@@ -1,12 +1,12 @@
 package gameClient;
 
-import gameEssentials.GamePlayer;
-import gameEssentials.Status;
 import java.rmi.RemoteException;
 
+import ar.edu.itba.pod.mmxivii.tweetwars.GameMaster;
+import ar.edu.itba.pod.mmxivii.tweetwars.GamePlayer;
+import ar.edu.itba.pod.mmxivii.tweetwars.Status;
+import ar.edu.itba.pod.mmxivii.tweetwars.TweetsProvider;
 import player.Player;
-import gameEssentials.GameMaster;
-import gameEssentials.TweetsProvider;
 
 public class Game {
 

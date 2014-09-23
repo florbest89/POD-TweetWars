@@ -1,12 +1,13 @@
 package gameClient;
 
-import gameEssentials.GameMaster;
-import gameEssentials.TweetsProvider;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+
+import ar.edu.itba.pod.mmxivii.tweetwars.GameMaster;
+import ar.edu.itba.pod.mmxivii.tweetwars.TweetsProvider;
 
 
 
